@@ -52,17 +52,12 @@ mainX = np.transpose(mainX)
 dft_magnitude_real = turning_coefs_real.dot(mainX)
 dft_magnitude_imag = turning_coefs_imag.dot(mainX)
 
-# print(dft_magnitude_real)
-# print(dft_magnitude_imag)
-
 for_schema = [math.sqrt(dft_magnitude_imag[i] ** 2 + dft_magnitude_real[i] ** 2) for i in range(dotNumber)]
 
 finish = datetime.now()
 alg_time = finish - start
-print(alg_time)
-# print(for_schema)
-# print(turning_coefs_real)
-# print(turning_coefs_imag)
+print('час виконання DFT: ',alg_time)
+
 
 plt.plot(for_schema)
 plt.show()
